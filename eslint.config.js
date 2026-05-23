@@ -23,5 +23,12 @@ export default defineConfig([
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
 
+    {//不再要求强制文件名规范
+    name: 'app/custom-rules',
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 ])
